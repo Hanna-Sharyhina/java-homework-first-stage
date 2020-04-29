@@ -2,11 +2,10 @@ package com.training.java.collections.maintask.tools;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
-import com.training.customexceptions.FalseInputException;
 
-public class Controller {
+public class Controller{
     private static final Logger LOGGER = Logger.getLogger(Controller.class.getSimpleName());
-    private int criteria;
+    private String criteria;
     SampleSongsByCriteria sampleSongsByCriteria = new SampleSongsByCriteria();
 
     public void createCriteriaForUserChoice(){
@@ -17,45 +16,33 @@ public class Controller {
         System.out.println("4 - Выбор композиций для прослушивания по заданному стилю. ");
         System.out.println("5 - Выход из приложения. ");
         Scanner scan = new Scanner(System.in);
-        try{
-            if (!scan.hasNextInt()){
-                throw new FalseInputException();
-            }
-            criteria = scan.nextInt();
-        } catch (FalseInputException e){
-            LOGGER.warning(String.valueOf(e));
-            createCriteriaForUserChoice();
-        }
+        criteria = scan.next().trim();
     }
+
     public void runSampleByUserChoice(){
-        while(true) {
+        while(true){
             createCriteriaForUserChoice();
-            switch (criteria) {
-                case 1:
+            switch (criteria){
+                case "1":
                     sampleSongsByCriteria.calcTotalDuration();
                     sampleSongsByCriteria.outPutTotalDuration();
                     break;
-                case 2:
+                case "2":
                     sampleSongsByCriteria.findSongsWithDurationInChosenTimeRange();
                     break;
-                case 3:
+                case "3":
                     sampleSongsByCriteria.sortSongsByStyle();
                     break;
-                case 4:
+                case "4":
                     sampleSongsByCriteria.setChosenStyle();
                     sampleSongsByCriteria.selectSongsByUserChoice();
                     break;
-                case 5:
+                case "5":
                     System.exit(0);
                     break;
                 default:
-                    try {
-                        throw new FalseInputException();
-                    } catch (FalseInputException e) {
-                        LOGGER.warning(String.valueOf(e));
-                        createCriteriaForUserChoice();
-                        runSampleByUserChoice();
-                    }
+                    LOGGER.warning("Неверный ввод. Попробуйте повторить. ");
+                    runSampleByUserChoice();
             }
         }
     }
