@@ -1,27 +1,26 @@
 package com.training.java.cleancode.planes;
 
 import com.training.java.cleancode.models.PassengerPlaneModel;
+import com.training.java.cleancode.types.PlaneType;
 
 import java.util.Objects;
 
 public class PassengerPlane extends Plane {
     private PassengerPlaneModel model;
     private int passengersCapacity;
-    public PassengerPlane(){
+
+    public PassengerPlane(PlaneType planeType, PassengerPlaneModel model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, int passengersCapacity) {
+        super(planeType, maxSpeed, maxFlightDistance, maxLoadCapacity);
+        this.model = model;
+        this.passengersCapacity = passengersCapacity;
     }
+
     public PassengerPlaneModel getModel() {
         return model;
     }
+
     public int getPassengersCapacity() {
         return passengersCapacity;
-    }
-
-    public void setModel(PassengerPlaneModel model) {
-        this.model = model;
-    }
-
-    public void setPassengersCapacity(int passengersCapacity) {
-        this.passengersCapacity = passengersCapacity;
     }
 
     @Override

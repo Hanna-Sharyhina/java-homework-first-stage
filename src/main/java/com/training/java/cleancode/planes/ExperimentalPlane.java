@@ -3,35 +3,32 @@ package com.training.java.cleancode.planes;
 import com.training.java.cleancode.models.ExperimentalPlaneModel;
 import com.training.java.cleancode.types.ConfidentialLevel;
 import com.training.java.cleancode.types.ExperimentalType;
+import com.training.java.cleancode.types.PlaneType;
 
 import java.util.Objects;
 
 public class ExperimentalPlane extends Plane {
-
     private ExperimentalPlaneModel model;
     private ConfidentialLevel confidentialLevel;
     private ExperimentalType experimentalType;
 
-    public ExperimentalPlaneModel getModel(){
+    public ExperimentalPlane(PlaneType planeType, ExperimentalPlaneModel model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, ConfidentialLevel confidentialLevel, ExperimentalType type) {
+        super(planeType, maxSpeed, maxFlightDistance, maxLoadCapacity);
+        this.model = model;
+        this.confidentialLevel = confidentialLevel;
+        this.experimentalType = type;
+    }
+
+    public ExperimentalPlaneModel getModel() {
         return model;
     }
-    public ConfidentialLevel getConfidentialLevel(){
+
+    public ConfidentialLevel getConfidentialLevel() {
         return confidentialLevel;
     }
-    public ExperimentalType getExperimentalType(){
+
+    public ExperimentalType getExperimentalType() {
         return experimentalType;
-    }
-
-    public void setModel(ExperimentalPlaneModel model) {
-        this.model = model;
-    }
-
-    public void setConfidentialLevel(ConfidentialLevel confidentialLevel) {
-        this.confidentialLevel = confidentialLevel;
-    }
-
-    public void setExperimentalType(ExperimentalType experimentalType) {
-        this.experimentalType = experimentalType;
     }
 
     @Override

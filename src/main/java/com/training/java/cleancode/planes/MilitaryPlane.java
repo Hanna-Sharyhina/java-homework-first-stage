@@ -2,26 +2,26 @@ package com.training.java.cleancode.planes;
 
 import com.training.java.cleancode.models.MilitaryPlaneModel;
 import com.training.java.cleancode.types.MilitaryType;
+import com.training.java.cleancode.types.PlaneType;
 
 import java.util.Objects;
 
 public class MilitaryPlane extends Plane {
     private MilitaryPlaneModel model;
-    private MilitaryType militaryType;
+    private MilitaryType type;
 
-    public MilitaryPlaneModel getModel(){
+    public MilitaryPlane(PlaneType planeType, MilitaryPlaneModel model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryType type) {
+        super(planeType, maxSpeed, maxFlightDistance, maxLoadCapacity);
+        this.model = model;
+        this.type = type;
+    }
+
+    public MilitaryPlaneModel getModel() {
         return model;
     }
-    public MilitaryType getMilitaryType(){
-        return militaryType;
-    }
 
-    public void setModel(MilitaryPlaneModel model) {
-        this.model = model;
-    }
-
-    public void setMilitaryType(MilitaryType militaryType) {
-        this.militaryType = militaryType;
+    public MilitaryType getType() {
+        return type;
     }
 
     @Override
@@ -33,12 +33,12 @@ public class MilitaryPlane extends Plane {
         MilitaryPlane that = (MilitaryPlane) o;
 
         if (model != that.model) return false;
-        return militaryType == that.militaryType;
+        return type == that.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), model, militaryType);
+        return Objects.hash(super.hashCode(), model, type);
     }
 
 
@@ -49,7 +49,7 @@ public class MilitaryPlane extends Plane {
                 ", maxSpeed = " + getMaxSpeed() +
                 ", maxFlightDistance = " + getMaxFlightDistance() +
                 ", maxLoadCapacity = " + getMaxLoadCapacity() +
-                ", MilitaryType = " + militaryType +
+                ", MilitaryType = " + type +
                 '}';
     }
 }

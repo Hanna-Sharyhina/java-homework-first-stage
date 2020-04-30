@@ -8,10 +8,14 @@ public abstract class Plane {
     private int maxFlightDistance;
     private int maxLoadCapacity;
 
-    public Plane() {
+    public Plane(PlaneType planeType, int maxSpeed, int maxFlightDistance, int maxLoadCapacity) {
+        this.planeType = planeType;
+        this.maxSpeed = maxSpeed;
+        this.maxFlightDistance = maxFlightDistance;
+        this.maxLoadCapacity = maxLoadCapacity;
     }
 
-    public PlaneType getPlaneType(){
+    public PlaneType getPlaneType() {
         return planeType;
     }
 
@@ -25,22 +29,6 @@ public abstract class Plane {
 
     public int getMaxLoadCapacity() {
         return maxLoadCapacity;
-    }
-
-    public void setPlaneType(PlaneType planeType) {
-        this.planeType = planeType;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
-
-    public void setMaxFlightDistance(int maxFlightDistance) {
-        this.maxFlightDistance = maxFlightDistance;
-    }
-
-    public void setMaxLoadCapacity(int maxLoadCapacity) {
-        this.maxLoadCapacity = maxLoadCapacity;
     }
 
     @Override
@@ -67,7 +55,7 @@ public abstract class Plane {
 
     @Override
     public String toString() {
-        return  "Plane { planeType = " + planeType +
+        return "Plane { planeType = " + planeType +
                 ", maxSpeed = " + maxSpeed +
                 ", maxFlightDistance = " + maxFlightDistance +
                 ", maxLoadCapacity = " + maxLoadCapacity +

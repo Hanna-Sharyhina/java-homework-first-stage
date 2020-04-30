@@ -19,7 +19,8 @@ public class SortingPlanes {
         List<PassengerPlane> passengerPlanes = new ArrayList<>();
         for (Plane plane : planes) {
             if (plane instanceof PassengerPlane) {
-                passengerPlanes.add((PassengerPlane) plane);}
+                passengerPlanes.add((PassengerPlane) plane);
+            }
         }
         return passengerPlanes;
     }
@@ -49,7 +50,7 @@ public class SortingPlanes {
         List<MilitaryPlane> transportMilitaryPlanes = new ArrayList<>();
         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
         for (MilitaryPlane plane : militaryPlanes) {
-            if (plane.getMilitaryType() == MilitaryType.TRANSPORT) {
+            if (plane.getType() == MilitaryType.TRANSPORT) {
                 transportMilitaryPlanes.add(plane);
             }
         }
@@ -60,7 +61,7 @@ public class SortingPlanes {
         List<MilitaryPlane> bomberMilitaryPlanes = new ArrayList<>();
         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
         for (MilitaryPlane plane : militaryPlanes) {
-            if (plane.getMilitaryType() == MilitaryType.BOMBER) {
+            if (plane.getType() == MilitaryType.BOMBER) {
                 bomberMilitaryPlanes.add(plane);
             }
         }
