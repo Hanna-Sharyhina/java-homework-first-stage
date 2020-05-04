@@ -7,10 +7,12 @@ public enum ArtSongGenres {
     SONATA("Соната");
 
     private String artSongGenreName;
+
     ArtSongGenres(String artSongGenreName) {
         this.artSongGenreName = artSongGenreName;
     }
-    public String getArtSongGenreName(){
+
+    public String getArtSongGenreName() {
         return artSongGenreName;
     }
 }

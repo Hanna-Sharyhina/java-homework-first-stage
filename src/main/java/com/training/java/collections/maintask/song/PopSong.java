@@ -1,14 +1,20 @@
 package com.training.java.collections.maintask.song;
 
 import com.training.java.collections.maintask.song.genres.PopSongGenres;
+import com.training.java.collections.maintask.song.genres.SongStyles;
 
-public class PopSong extends Song{
+public class PopSong extends Song {
     private String performer;
     private int releaseYear;
     private PopSongGenres genre;
     private String albumName;
 
-    public PopSong(){
+    public PopSong(String title, String performer, double duration, SongStyles style, PopSongGenres genre, int releaseYear, String albumName) {
+        super(title, duration, style);
+        this.performer = performer;
+        this.releaseYear = releaseYear;
+        this.genre = genre;
+        this.albumName = albumName;
     }
 
     public String getPerformer() {
@@ -71,11 +77,11 @@ public class PopSong extends Song{
     public String toString() {
         return "{Название = '" + getTitle() +
                 "', стиль = '" + getStyle().getSongStyleName() +
-                "', жанр = '" + genre.getPopSongGenreName()  +
-                "', исполнитель = " + performer  +
+                "', жанр = '" + genre.getPopSongGenreName() +
+                "', исполнитель = " + performer +
                 ", год выпуска = " + releaseYear +
-                ", альбом = '" + albumName  +
-                "', продолжительность = " + (int)Math.floor(getDuration()) + ":" + (int)((getDuration() - Math.floor(getDuration()))*60)+
-                '}'+ "\n";
+                ", альбом = '" + albumName +
+                "', продолжительность = " + (int) Math.floor(getDuration()) + ":" + (int) ((getDuration() - Math.floor(getDuration())) * 60) +
+                '}' + "\n";
     }
 }

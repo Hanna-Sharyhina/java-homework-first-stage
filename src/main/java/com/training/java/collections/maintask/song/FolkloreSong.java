@@ -1,11 +1,14 @@
 package com.training.java.collections.maintask.song;
 
 import com.training.java.collections.maintask.song.genres.NationBelonging;
+import com.training.java.collections.maintask.song.genres.SongStyles;
 
 public class FolkloreSong extends Song {
     private NationBelonging nationBelonging;
 
-    public FolkloreSong(){
+    public FolkloreSong(String title, NationBelonging nationBelonging, double duration, SongStyles style) {
+        super(title, duration, style);
+        this.nationBelonging = nationBelonging;
     }
 
     public NationBelonging getNationBelonging() {
@@ -36,10 +39,10 @@ public class FolkloreSong extends Song {
 
     @Override
     public String toString() {
-        return  "{Название = '" + getTitle() +
+        return "{Название = '" + getTitle() +
                 "', стиль = '" + getStyle().getSongStyleName() +
                 "', принадлежность = " + nationBelonging.getNationBelongingName() + " народная" +
-                ", продолжительность = " + (int)Math.floor(getDuration()) + ":" + (int)((getDuration() - Math.floor(getDuration()))*60) +
-                '}'+ "\n";
+                ", продолжительность = " + (int) Math.floor(getDuration()) + ":" + (int) ((getDuration() - Math.floor(getDuration())) * 60) +
+                '}' + "\n";
     }
 }

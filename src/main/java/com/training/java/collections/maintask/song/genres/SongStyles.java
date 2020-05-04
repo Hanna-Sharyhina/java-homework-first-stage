@@ -6,10 +6,12 @@ public enum SongStyles {
     POP("Популярная музыка");
 
     private String songStyleName;
-    SongStyles(String songStyleName){
+
+    SongStyles(String songStyleName) {
         this.songStyleName = songStyleName;
     }
-    public String getSongStyleName(){
+
+    public String getSongStyleName() {
         return songStyleName;
     }
 }

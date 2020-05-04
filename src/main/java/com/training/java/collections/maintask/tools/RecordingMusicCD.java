@@ -1,9 +1,9 @@
 package com.training.java.collections.maintask.tools;
 
+import com.training.java.collections.maintask.song.ArtSong;
+import com.training.java.collections.maintask.song.FolkloreSong;
+import com.training.java.collections.maintask.song.PopSong;
 import com.training.java.collections.maintask.song.Song;
-import com.training.java.collections.maintask.song.builders.ArtSongBuilder;
-import com.training.java.collections.maintask.song.builders.FolkloreSongBuilder;
-import com.training.java.collections.maintask.song.builders.PopSongBuilder;
 import com.training.java.collections.maintask.song.genres.ArtSongGenres;
 import com.training.java.collections.maintask.song.genres.NationBelonging;
 import com.training.java.collections.maintask.song.genres.PopSongGenres;
@@ -14,144 +14,27 @@ import java.util.List;
 
 public class RecordingMusicCD {
     protected static List<Song> musicCD = new ArrayList<>();
+
     public void addSongs() {
-        musicCD.add(new PopSongBuilder()
-                .setPerformer("Alice Cooper")
-                .setAlbumName("Trash")
-                .setGenre(PopSongGenres.ROCK)
-                .setReleaseYear(1989)
-                .setTitle("Poison")
-                .setStyle(SongStyles.POP)
-                .setDuration(4.52).build());
-        musicCD.add(new PopSongBuilder()
-                .setPerformer("Fleetwood Mac")
-                .setAlbumName("Rumours")
-                .setReleaseYear(1977)
-                .setGenre(PopSongGenres.ROCK)
-                .setTitle("The chain")
-                .setStyle(SongStyles.POP)
-                .setDuration(4.48).build());
-        musicCD.add(new PopSongBuilder()
-                .setPerformer("Queen")
-                .setAlbumName("A Night at the Opera")
-                .setReleaseYear(1975)
-                .setGenre(PopSongGenres.ROCK)
-                .setTitle("Love of my life")
-                .setStyle(SongStyles.POP)
-                .setDuration(3.62).build());
-        musicCD.add(new PopSongBuilder()
-                .setPerformer("Eminem")
-                .setAlbumName("The Marshall Mathers LP")
-                .setReleaseYear(2000)
-                .setGenre(PopSongGenres.HIP_HOP)
-                .setTitle("Stan")
-                .setStyle(SongStyles.POP)
-                .setDuration(6.73).build());
-        musicCD.add(new PopSongBuilder()
-                .setPerformer("Rammstein")
-                .setAlbumName("Mutter")
-                .setReleaseYear(2001)
-                .setGenre(PopSongGenres.ROCK)
-                .setTitle("Ich Will")
-                .setStyle(SongStyles.POP)
-                .setDuration(3.62).build());
-        musicCD.add(new PopSongBuilder()
-                .setPerformer("Johnny Cash")
-                .setAlbumName("American IV: The Man Comes Around")
-                .setReleaseYear(2002)
-                .setGenre(PopSongGenres.COUNTRY)
-                .setStyle(SongStyles.POP)
-                .setTitle("Hurt")
-                .setDuration(3.6).build());
-        musicCD.add(new PopSongBuilder()
-                .setPerformer("Frank Sinatra")
-                .setAlbumName("Strangers in the Night")
-                .setReleaseYear(2010)
-                .setGenre(PopSongGenres.JAZZ)
-                .setTitle("Strangers In The Night")
-                .setStyle(SongStyles.POP)
-                .setDuration(2.73).build());
-        musicCD.add(new PopSongBuilder()
-                .setPerformer("Nina Simone")
-                .setAlbumName("I Put a Spell on You")
-                .setReleaseYear(1965)
-                .setGenre(PopSongGenres.JAZZ)
-                .setTitle("Feeling good")
-                .setStyle(SongStyles.POP)
-                .setDuration(2.88).build());
-        musicCD.add(new PopSongBuilder()
-                .setPerformer("Michael Jackson")
-                .setAlbumName("Thriller")
-                .setReleaseYear(1982)
-                .setGenre(PopSongGenres.POP)
-                .setTitle("Thriller")
-                .setStyle(SongStyles.POP)
-                .setDuration(5.22).build());
-        musicCD.add(new PopSongBuilder()
-                .setPerformer("Elvis Presley")
-                .setAlbumName("Blue Hawaii")
-                .setReleaseYear(1961)
-                .setGenre(PopSongGenres.ROCK_AND_ROLL)
-                .setTitle("Can't Help Falling in Love")
-                .setStyle(SongStyles.POP)
-                .setDuration(3.02).build());
-        musicCD.add(new PopSongBuilder()
-                .setPerformer("Bill Haley")
-                .setAlbumName("Rock Around the Clock")
-                .setReleaseYear(1954)
-                .setGenre(PopSongGenres.ROCK_AND_ROLL)
-                .setTitle("Rock Around the Clock")
-                .setStyle(SongStyles.POP)
-                .setDuration(2.2).build());
-        musicCD.add(new ArtSongBuilder()
-                .setComposer("Claude Debussy")
-                .setGenre(ArtSongGenres.SUITE)
-                .setTitle("Clair de lune")
-                .setStyle(SongStyles.ART)
-                .setDuration(4.77).build());
-        musicCD.add(new ArtSongBuilder()
-                .setComposer("Ludovico Einaudi")
-                .setGenre(ArtSongGenres.SYMPHONY)
-                .setTitle("Una mattina")
-                .setStyle(SongStyles.ART)
-                .setDuration(3.37).build());
-        musicCD.add(new ArtSongBuilder()
-                .setComposer("Beethoven")
-                .setGenre(ArtSongGenres.SONATA)
-                .setTitle("Sonata №14")
-                .setStyle(SongStyles.ART)
-                .setDuration(6.6).build());
-        musicCD.add(new ArtSongBuilder()
-                .setComposer("Giacomo Puccini")
-                .setGenre(ArtSongGenres.OPERA)
-                .setTitle("Nessun dorma")
-                .setStyle(SongStyles.ART)
-                .setDuration(3.52).build());
-        musicCD.add(new ArtSongBuilder()
-                .setComposer("Domenico Scarlatti")
-                .setGenre(ArtSongGenres.SONATA)
-                .setTitle("Sonata En Re Menor")
-                .setStyle(SongStyles.ART)
-                .setDuration(2.02).build());
-        musicCD.add(new FolkloreSongBuilder()
-                .setNationalBelonging(NationBelonging.BELARUS)
-                .setTitle("Лявонiха")
-                .setStyle(SongStyles.FOLKLORE)
-                .setDuration(3.63).build());
-        musicCD.add(new FolkloreSongBuilder()
-                .setNationalBelonging(NationBelonging.RUSSIAN)
-                .setTitle("Тройка")
-                .setStyle(SongStyles.FOLKLORE)
-                .setDuration(3.5).build());
-        musicCD.add(new FolkloreSongBuilder()
-                .setNationalBelonging(NationBelonging.BELARUS)
-                .setTitle("Касiў Ясь канюшыну")
-                .setStyle(SongStyles.FOLKLORE)
-                .setDuration(4.22).build());
-        musicCD.add(new FolkloreSongBuilder()
-                .setNationalBelonging(NationBelonging.ENGLAND)
-                .setTitle("Green sleeves")
-                .setStyle(SongStyles.FOLKLORE)
-                .setDuration(3.73).build());
+        musicCD.add(new PopSong("Poison", "Alice Cooper", 4.52, SongStyles.POP, PopSongGenres.ROCK, 1989, "Trash"));
+        musicCD.add(new PopSong("The chain", "Fleetwood Mac", 4.48, SongStyles.POP, PopSongGenres.ROCK, 1977, "Rumours"));
+        musicCD.add(new PopSong("Love of my life", "Queen", 3.62, SongStyles.POP, PopSongGenres.ROCK, 1975, "A Night at the Opera"));
+        musicCD.add(new PopSong("Stan", "Eminem", 6.73, SongStyles.POP, PopSongGenres.HIP_HOP, 2000, "The Marshall Mathers LP"));
+        musicCD.add(new PopSong("Ich Will", "Rammstein", 3.62, SongStyles.POP, PopSongGenres.ROCK, 2001, "Mutter"));
+        musicCD.add(new PopSong("Hurt", "Johnny Cash", 3.6, SongStyles.POP, PopSongGenres.COUNTRY, 2002, "American IV: The Man Comes Around"));
+        musicCD.add(new PopSong("Strangers In The Night", "Frank Sinatra", 2.73, SongStyles.POP, PopSongGenres.JAZZ, 2010, "Strangers in the Night"));
+        musicCD.add(new PopSong("Feeling good", "Nina Simone", 2.88, SongStyles.POP, PopSongGenres.JAZZ, 1965, "I Put a Spell on You"));
+        musicCD.add(new PopSong("Thriller", "Michael Jackson", 5.22, SongStyles.POP, PopSongGenres.POP, 1982, "Thriller"));
+        musicCD.add(new PopSong("Can't Help Falling in Love", "Elvis Presley", 3.02, SongStyles.POP, PopSongGenres.ROCK_AND_ROLL, 1961, "Blue Hawaii"));
+        musicCD.add(new PopSong("Rock Around the Clock", "Bill Haley", 2.2, SongStyles.POP, PopSongGenres.ROCK_AND_ROLL, 1954, "Rock Around the Clock"));
+        musicCD.add(new ArtSong("Clair de lune", "Claude Debussy", 4.77, SongStyles.ART, ArtSongGenres.SUITE));
+        musicCD.add(new ArtSong("Una mattina", "Ludovico Einaudi", 3.37, SongStyles.ART, ArtSongGenres.SYMPHONY));
+        musicCD.add(new ArtSong("Sonata №14", "Beethoven", 6.6, SongStyles.ART, ArtSongGenres.SONATA));
+        musicCD.add(new ArtSong("Nessun dorma", "Giacomo Puccini", 3.52, SongStyles.ART, ArtSongGenres.OPERA));
+        musicCD.add(new ArtSong("Sonata En Re Menor", "Domenico Scarlatti", 2.02, SongStyles.ART, ArtSongGenres.SONATA));
+        musicCD.add(new FolkloreSong("Лявонiха", NationBelonging.BELARUS, 3.63, SongStyles.FOLKLORE));
+        musicCD.add(new FolkloreSong("Тройка", NationBelonging.RUSSIAN, 3.5, SongStyles.FOLKLORE));
+        musicCD.add(new FolkloreSong("Касiў Ясь канюшыну", NationBelonging.BELARUS, 4.22, SongStyles.FOLKLORE));
+        musicCD.add(new FolkloreSong("Green sleeves", NationBelonging.ENGLAND, 3.73, SongStyles.FOLKLORE));
     }
 }

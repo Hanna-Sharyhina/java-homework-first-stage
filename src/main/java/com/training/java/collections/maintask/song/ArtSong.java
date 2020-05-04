@@ -1,12 +1,16 @@
 package com.training.java.collections.maintask.song;
 
 import com.training.java.collections.maintask.song.genres.ArtSongGenres;
+import com.training.java.collections.maintask.song.genres.SongStyles;
 
-public class ArtSong extends Song{
+public class ArtSong extends Song {
     private String composer;
     private ArtSongGenres genre;
 
-    public ArtSong(){
+    public ArtSong(String title, String composer, double duration, SongStyles style, ArtSongGenres genre) {
+        super(title, duration, style);
+        this.composer = composer;
+        this.genre = genre;
     }
 
     public String getComposer() {
@@ -51,7 +55,7 @@ public class ArtSong extends Song{
                 "', стиль = '" + getStyle().getSongStyleName() +
                 "', композитор = " + composer +
                 ", жанр '" + genre.getArtSongGenreName() +
-                "', продолжительность = " + (int)Math.floor(getDuration()) + ":" + (int)((getDuration() - Math.floor(getDuration()))*60) +
-                '}'+ "\n";
+                "', продолжительность = " + (int) Math.floor(getDuration()) + ":" + (int) ((getDuration() - Math.floor(getDuration())) * 60) +
+                '}' + "\n";
     }
 }

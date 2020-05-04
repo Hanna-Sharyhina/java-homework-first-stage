@@ -3,12 +3,12 @@ package com.training.java.collections.maintask.tools;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class Controller{
+public class Controller {
     private static final Logger LOGGER = Logger.getLogger(Controller.class.getSimpleName());
     private String criteria;
     SampleSongsByCriteria sampleSongsByCriteria = new SampleSongsByCriteria();
 
-    public void createCriteriaForUserChoice(){
+    public void createCriteriaForUserChoice() {
         System.out.println("Введите номер действия, где: ");
         System.out.println("1 - Вывод продолжительности всех композиций.");
         System.out.println("2 - Поиск композиции по заданному диапазону продолжительности. ");
@@ -19,10 +19,10 @@ public class Controller{
         criteria = scan.next().trim();
     }
 
-    public void runSampleByUserChoice(){
-        while(true){
+    public void runSampleByUserChoice() {
+        while (true) {
             createCriteriaForUserChoice();
-            switch (criteria){
+            switch (criteria) {
                 case "1":
                     sampleSongsByCriteria.calcTotalDuration();
                     sampleSongsByCriteria.outPutTotalDuration();

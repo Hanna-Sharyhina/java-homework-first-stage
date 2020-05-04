@@ -7,7 +7,10 @@ public abstract class Song {
     private double duration;
     private SongStyles style;
 
-    public Song() {
+    public Song(String title, double duration, SongStyles style) {
+        this.title = title;
+        this.duration = duration;
+        this.style = style;
     }
 
     public String getTitle() {

@@ -10,10 +10,11 @@ public enum PopSongGenres {
 
     private String popSongGenreName;
 
-    PopSongGenres(String popSongGenreName){
+    PopSongGenres(String popSongGenreName) {
         this.popSongGenreName = popSongGenreName;
     }
-    public String getPopSongGenreName(){
+
+    public String getPopSongGenreName() {
         return popSongGenreName;
     }
 }

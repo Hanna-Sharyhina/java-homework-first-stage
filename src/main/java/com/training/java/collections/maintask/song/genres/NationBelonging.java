@@ -6,11 +6,12 @@ public enum NationBelonging {
     ENGLAND("Английская");
 
     private String nationBelongingName;
-    NationBelonging(String nationBelongingName){
+
+    NationBelonging(String nationBelongingName) {
         this.nationBelongingName = nationBelongingName;
     }
 
-    public String getNationBelongingName(){
+    public String getNationBelongingName() {
         return nationBelongingName;
     }
 }
