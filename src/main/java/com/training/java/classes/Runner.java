@@ -1,130 +1,32 @@
 package com.training.java.classes;
 
+import com.training.customexceptions.FalseInputException;
+
 import java.util.ArrayList;
 
 public class Runner {
+    private static final String HARDCOVER = "твердый переплет";
+    private static final String PAPERBACK = "мягкая обложка";
+    private static final String EKSMO_PUBLISHER = "Эксмо";
+    private static final String AST_PUBLISHER = "АСТ";
+    private static final String AZBUKA_PUBLISHER = "Азбука";
+    private static final String MAXAON_PUBLISHER = "Махаон";
 
-        private static final String HARDCOVER = "твердый переплет";
-        private static final String PAPERBACK = "мягкая обложка";
-        private static final String EKSMO_PUBLISHER = "Эксмо";
-        private static final String AST_PUBLISHER = "АСТ";
-        private static final String AZBUKA_PUBLISHER = "Азбука";
+    public static void main(String[] args) throws FalseInputException {
+        ArrayList<Book> allBooksArray = new ArrayList<>();
+        allBooksArray.add(new Book(1, "Три товарища", "Ремарк", "Эрих Мария", 2016, AST_PUBLISHER, HARDCOVER, 384, 14.01));
+        allBooksArray.add(new Book(2, "Белый Клык", "Лондон", "Джек", 2019, MAXAON_PUBLISHER, HARDCOVER, 224, 5.74));
+        allBooksArray.add(new Book(3, "Властелин колец", "Толкин", "Джон", 2018, AST_PUBLISHER, HARDCOVER, 1120, 29));
+        allBooksArray.add(new Book(4, "Сильмариллион", "Толкин", "Джон", 2014, AST_PUBLISHER, HARDCOVER, 416, 12.55));
+        allBooksArray.add(new Book(5, "Портрет Дориана Грея", "Уайльд", "Оскар", 2012, AZBUKA_PUBLISHER, HARDCOVER, 416, 7.55));
+        allBooksArray.add(new Book(6, "451° по Фаренгейту", "Брэдбери", "Рэй", 2011, EKSMO_PUBLISHER, HARDCOVER, 272, 9));
+        allBooksArray.add(new Book(7, "Мастер и Маргарита", "Булгаков", "Михаил", 2012, EKSMO_PUBLISHER, PAPERBACK, 544, 7));
+        allBooksArray.add(new Book(8, "Quo Vadis", "Сенкевич", "Генрих", 2017, EKSMO_PUBLISHER, HARDCOVER, 608, 9));
+        allBooksArray.add(new Book(9, "Собачье сердце", "Булгаков", "Михаил", 2019, AST_PUBLISHER, HARDCOVER, 480, 8.99));
+        allBooksArray.add(new Book(10, "Сто лет одиночества", "Маркес", "Габриэль", 2007, AZBUKA_PUBLISHER, HARDCOVER, 368, 16));
 
-        public static void main(String[] args) {
-            ArrayList<Book> allBooksArray = new ArrayList<>();
-            allBooksArray.add(new BookBuilder()
-                    .setId(1)
-                    .setTitle("Три товарища")
-                    .setAuthorFirstName("Эрих Мария")
-                    .setAuthorLastName("Ремарк")
-                    .setYear(2016)
-                    .setPublisher(AST_PUBLISHER)
-                    .setCover(HARDCOVER)
-                    .setAmountPages(384)
-                    .setCost(14.01).build());
-
-            allBooksArray.add(new BookBuilder()
-                    .setId(2)
-                    .setTitle("Белый Клык")
-                    .setAuthorFirstName("Джек")
-                    .setAuthorLastName("Лондон")
-                    .setYear(2019)
-                    .setPublisher("Махаон")
-                    .setCover(HARDCOVER)
-                    .setAmountPages(224)
-                    .setCost(5.74).build());
-
-            allBooksArray.add(new BookBuilder()
-                    .setId(3)
-                    .setTitle("Властелин колец")
-                    .setAuthorFirstName("Джон")
-                    .setAuthorLastName("Толкин")
-                    .setYear(2018)
-                    .setPublisher(AST_PUBLISHER)
-                    .setCover(HARDCOVER)
-                    .setAmountPages(1120)
-                    .setCost(29).build());
-
-            allBooksArray.add(new BookBuilder()
-                    .setId(4)
-                    .setTitle("Сильмариллион")
-                    .setAuthorFirstName("Джон")
-                    .setAuthorLastName("Толкин")
-                    .setYear(2014)
-                    .setPublisher(AST_PUBLISHER)
-                    .setCover(HARDCOVER)
-                    .setAmountPages(416)
-                    .setCost(12.55).build());
-
-            allBooksArray.add(new BookBuilder()
-                    .setId(5)
-                    .setTitle("Портрет Дориана Грея")
-                    .setAuthorFirstName("Оскар")
-                    .setAuthorLastName("Уайльд")
-                    .setYear(2012)
-                    .setPublisher(AZBUKA_PUBLISHER)
-                    .setCover(HARDCOVER)
-                    .setAmountPages(416)
-                    .setCost(7.55).build());
-
-            allBooksArray.add(new BookBuilder()
-                    .setId(6)
-                    .setTitle("451° по Фаренгейту")
-                    .setAuthorFirstName("Рэй")
-                    .setAuthorLastName("Брэдбери")
-                    .setYear(2011)
-                    .setPublisher(EKSMO_PUBLISHER)
-                    .setCover(HARDCOVER)
-                    .setAmountPages(272)
-                    .setCost(9).build());
-
-            allBooksArray.add(new BookBuilder()
-                    .setId(7)
-                    .setTitle("Мастер и Маргарита")
-                    .setAuthorFirstName("Михаил")
-                    .setAuthorLastName("Булгаков")
-                    .setYear(2012)
-                    .setPublisher(EKSMO_PUBLISHER)
-                    .setCover(PAPERBACK)
-                    .setAmountPages(544)
-                    .setCost(7).build());
-
-            allBooksArray.add(new BookBuilder()
-                    .setId(8)
-                    .setTitle("Quo Vadis")
-                    .setAuthorFirstName("Генрих")
-                    .setAuthorLastName("Сенкевич")
-                    .setYear(2017)
-                    .setPublisher(EKSMO_PUBLISHER)
-                    .setCover(HARDCOVER)
-                    .setAmountPages(608)
-                    .setCost(9).build());
-
-            allBooksArray.add(new BookBuilder()
-                    .setId(9)
-                    .setTitle("Собачье сердце")
-                    .setAuthorFirstName("Михаил")
-                    .setAuthorLastName("Булгаков")
-                    .setYear(2019)
-                    .setPublisher(AST_PUBLISHER)
-                    .setCover(HARDCOVER)
-                    .setAmountPages(480)
-                    .setCost(8.99).build());
-
-            allBooksArray.add(new BookBuilder()
-                    .setId(10)
-                    .setTitle("Сто лет одиночества")
-                    .setAuthorFirstName("Габриэль")
-                    .setAuthorLastName("Маркес")
-                    .setYear(2007)
-                    .setPublisher(AZBUKA_PUBLISHER)
-                    .setCover(HARDCOVER)
-                    .setAmountPages(368)
-                    .setCost(16).build());
-
-            SortingBooksByCriteria sortingBooksByCriteria = new SortingBooksByCriteria();
-            sortingBooksByCriteria.createCriteriaForUserChoice();
-            sortingBooksByCriteria.runSortingByCriteria(allBooksArray);
-        }
+        SortingBooksByCriteria sortingBooksByCriteria = new SortingBooksByCriteria();
+        sortingBooksByCriteria.runSortingByCriteria(allBooksArray);
+    }
 }
 
