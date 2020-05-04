@@ -1,7 +1,5 @@
 package com.training.java.classes;
 
-import com.training.customexceptions.FalseInputException;
-
 import java.util.ArrayList;
 
 public class Runner {
@@ -12,7 +10,7 @@ public class Runner {
     private static final String AZBUKA_PUBLISHER = "Азбука";
     private static final String MAXAON_PUBLISHER = "Махаон";
 
-    public static void main(String[] args) throws FalseInputException {
+    public static void main(String[] args) {
         ArrayList<Book> allBooksArray = new ArrayList<>();
         allBooksArray.add(new Book(1, "Три товарища", "Ремарк", "Эрих Мария", 2016, AST_PUBLISHER, HARDCOVER, 384, 14.01));
         allBooksArray.add(new Book(2, "Белый Клык", "Лондон", "Джек", 2019, MAXAON_PUBLISHER, HARDCOVER, 224, 5.74));
