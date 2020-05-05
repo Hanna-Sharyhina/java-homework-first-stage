@@ -1,7 +1,6 @@
 package com.training.java.fundamentals.maintasks;
 
 public class ReverseCommandLineArgumentsOrder {
-
     public static void main(String[] args) {
         if (args.length != 0) {
             for (int i = args.length - 1; i >= 0; --i) {

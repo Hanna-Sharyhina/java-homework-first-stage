@@ -4,34 +4,34 @@ import java.io.*;
 import java.util.*;
 import java.util.logging.Logger;
 
-public class SortingPoem{
+public class SortingPoem {
     static List<String> poem = new ArrayList<>();
     static String choice;
     private static final Logger LOGGER = Logger.getLogger(SortingPoem.class.getSimpleName());
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         readLinesFromFile();
         outPutGenuinePoem();
         runSortingByChosenCriteria();
     }
 
-    public static void readLinesFromFile(){
+    public static void readLinesFromFile() {
         try (BufferedReader reader
-                     = new BufferedReader(new FileReader("src\\main\\resources\\AnnabelLeePoem.txt"))){
+                     = new BufferedReader(new FileReader("src\\main\\resources\\AnnabelLeePoem.txt"))) {
             reader.lines().forEach(poem::add);
-        } catch (IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
-    public static void outPutGenuinePoem(){
+    public static void outPutGenuinePoem() {
         for (String s : poem) {
             System.out.println(s);
         }
         System.out.println();
     }
 
-    public static void chooseSortingMethodByUserChoice(){
+    public static void chooseSortingMethodByUserChoice() {
         System.out.println("Выберите способ сортировки, где: ");
         System.out.println("1 - сортировка по длине строк. ");
         System.out.println("2 - сортировка строк по алфавиту. ");
@@ -40,7 +40,7 @@ public class SortingPoem{
         choice = scanner.next().trim();
     }
 
-    public static void runSortingByChosenCriteria(){
+    public static void runSortingByChosenCriteria() {
         chooseSortingMethodByUserChoice();
         switch (choice) {
             case "1":
@@ -60,26 +60,26 @@ public class SortingPoem{
         }
     }
 
-    public static void sortPoemByLineLength(){
+    public static void sortPoemByLineLength() {
         poem.sort((o1, o2) -> o1.length() - o2.length());
     }
 
-    public static void sortPoemByAlphabetOrder(){
+    public static void sortPoemByAlphabetOrder() {
         Collections.sort(poem);
     }
 
-    public static void writeReverseOrderOfPoemInDifferentFile(){
-        try(BufferedWriter writer =
-                    new BufferedWriter(new FileWriter("src\\src\\main\\resources\\AnnabelLeePoemWithReverseOrder.txt"))){
-            for (int i = poem.size()-1; i>=0; i--){
+    public static void writeReverseOrderOfPoemInDifferentFile() {
+        try (BufferedWriter writer =
+                     new BufferedWriter(new FileWriter("src\\src\\main\\resources\\AnnabelLeePoemWithReverseOrder.txt"))) {
+            for (int i = poem.size() - 1; i >= 0; i--) {
                 writer.write(poem.get(i) + "\n");
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void outPutSortedPoem(){
+    public static void outPutSortedPoem() {
         for (String s : poem) {
             System.out.println(s);
         }

@@ -13,7 +13,6 @@ public class FindingMonthByNumber {
             System.out.println("Вы ввели не число! Попробуйте снова. ");
             return;
         }
-
         switch (numberOfMonth) {
             case 1:
                 System.out.print("Январь");

@@ -10,7 +10,6 @@ public class OptionalTask {
     void setAmountOfNumbers() {
         System.out.println("Ввведите количество чисел: ");
         Scanner scan = new Scanner(System.in);
-
         if (scan.hasNextInt()) {
             amountOfNumbers = scan.nextInt();
         } else {
@@ -19,7 +18,7 @@ public class OptionalTask {
         }
     }
 
-    void setNumbers(){
+    void setNumbers() {
         System.out.println("Введите числа: ");
         Scanner scanner = new Scanner(System.in);
         numbers = new int[amountOfNumbers];
@@ -33,7 +32,7 @@ public class OptionalTask {
         }
     }
 
-    void findLongestNumber(){
+    void findLongestNumber() {
         int length = String.valueOf(numbers[0]).length();
         int longestNumber = 0;
         for (int i = 0; i < numbers.length; i++) {
@@ -46,7 +45,7 @@ public class OptionalTask {
         System.out.println("Самое длинное число: " + numbers[longestNumber] + ". Его длина равна: " + length + ". ");
     }
 
-    void findShortestNumber(){
+    void findShortestNumber() {
         int length = String.valueOf(numbers[0]).length();
         int shortestNumber = 0;
         for (int i = 0; i < numbers.length; i++) {
@@ -59,7 +58,7 @@ public class OptionalTask {
         System.out.println("Самое короткое число: " + numbers[shortestNumber] + ". Его длина равна: " + length + ". ");
     }
 
-    void findAverageLength(){
+    void findAverageLength() {
         float sum = 0;
         for (int number : numbers) {
             sum += String.valueOf(number).length();
@@ -68,9 +67,8 @@ public class OptionalTask {
         System.out.println("Средняя длина по всем числам равна: " + averageLengthOfNumbers);
     }
 
-    void findNumbersThatLongerThanAverageLength(){
+    void findNumbersThatLongerThanAverageLength() {
         System.out.print("Числа, длина которых меньше средней: ");
-
         for (int number : numbers) {
             if (averageLengthOfNumbers > String.valueOf(number).length()) {
                 System.out.print("Число: " + number + ", его длина: " + String.valueOf(number).length() + ". ");
@@ -79,7 +77,7 @@ public class OptionalTask {
         System.out.println();
     }
 
-    void findNumbersThatShorterThanAverageLength(){
+    void findNumbersThatShorterThanAverageLength() {
         System.out.print("Числа, длина которых больше средней: ");
         for (int number : numbers) {
             if (averageLengthOfNumbers < String.valueOf(number).length()) {
@@ -89,7 +87,7 @@ public class OptionalTask {
         System.out.println();
     }
 
-    void findNumberWithIncreasingOrderOfDigits(){
+    void findNumberWithIncreasingOrderOfDigits() {
         int index;
         boolean flag = false;
         for (int number : numbers) {
@@ -117,14 +115,14 @@ public class OptionalTask {
         }
     }
 
-    void sortNumbersInAscendingOrderOfLength(){
+    void sortNumbersInAscendingOrderOfLength() {
         System.out.print("Выводим числа в порядке возрастания их длины: ");
         boolean sort = false;
         int index;
         while (!sort) {
             sort = true;
             for (int i = 0; i < numbers.length - 1; i++) {
-                if (String.valueOf(numbers[i]).length() > String.valueOf(numbers[i+1]).length()) {
+                if (String.valueOf(numbers[i]).length() > String.valueOf(numbers[i + 1]).length()) {
                     sort = false;
                     index = numbers[i];
                     numbers[i] = numbers[i + 1];
@@ -138,14 +136,14 @@ public class OptionalTask {
         System.out.println();
     }
 
-    void sortNumbersInDescendingOrderOfLength(){
+    void sortNumbersInDescendingOrderOfLength() {
         System.out.print("Выводим числа в порядке убывания их длины: ");
         boolean sort = false;
         int index;
         while (!sort) {
             sort = true;
             for (int i = 0; i < numbers.length - 1; i++) {
-                if (String.valueOf(numbers[i]).length() < String.valueOf(numbers[i+1]).length()) {
+                if (String.valueOf(numbers[i]).length() < String.valueOf(numbers[i + 1]).length()) {
                     sort = false;
                     index = numbers[i];
                     numbers[i] = numbers[i + 1];

@@ -9,8 +9,8 @@ public class FindingSumAndProductOfCommandLineArguments {
                 sum += Integer.parseInt(args[i]);
                 mul *= Integer.parseInt(args[i]);
             }
-        System.out.println("Сумма = " + sum);
-        System.out.println("Произведение = " + mul);
+            System.out.println("Сумма = " + sum);
+            System.out.println("Произведение = " + mul);
         } else {
             System.out.println("Аргументы командной строки отсутствуют!");
         }

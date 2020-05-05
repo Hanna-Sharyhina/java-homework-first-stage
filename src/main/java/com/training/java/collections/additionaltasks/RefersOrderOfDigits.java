@@ -11,10 +11,10 @@ public class RefersOrderOfDigits {
         Scanner scan = new Scanner(System.in);
         number = scan.next();
         Deque<Integer> stack = new ArrayDeque<>();
-        for (int i = 0; i < number.length(); i++){
+        for (int i = 0; i < number.length(); i++) {
             stack.push(Character.digit(number.charAt(i), 10));
         }
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             System.out.print(stack.pop());
         }
     }

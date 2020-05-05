@@ -63,7 +63,7 @@ public abstract class Song {
     @Override
     public String toString() {
         return "Song{" + "Название = '" + title + '\'' +
-                ", стиль = "+ style.getSongStyleName() +
+                ", стиль = " + style.getSongStyleName() +
                 ", продолжительность = " + duration +
                 '}';
     }
