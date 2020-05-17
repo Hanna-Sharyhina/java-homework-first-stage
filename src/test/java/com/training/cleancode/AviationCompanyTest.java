@@ -1,17 +1,17 @@
 package com.training.cleancode;
 
-import com.training.java.firstStage.cleancode.SortingPlanes;
-import com.training.java.firstStage.cleancode.models.ExperimentalPlaneModel;
-import com.training.java.firstStage.cleancode.models.MilitaryPlaneModel;
-import com.training.java.firstStage.cleancode.models.PassengerPlaneModel;
-import com.training.java.firstStage.cleancode.planes.ExperimentalPlane;
-import com.training.java.firstStage.cleancode.planes.MilitaryPlane;
-import com.training.java.firstStage.cleancode.planes.PassengerPlane;
-import com.training.java.firstStage.cleancode.planes.Plane;
-import com.training.java.firstStage.cleancode.types.ConfidentialLevel;
-import com.training.java.firstStage.cleancode.types.ExperimentalType;
-import com.training.java.firstStage.cleancode.types.MilitaryType;
-import com.training.java.firstStage.cleancode.types.PlaneType;
+import com.training.java.firststage.cleancode.SortingPlanes;
+import com.training.java.firststage.cleancode.models.ExperimentalPlaneModel;
+import com.training.java.firststage.cleancode.models.MilitaryPlaneModel;
+import com.training.java.firststage.cleancode.models.PassengerPlaneModel;
+import com.training.java.firststage.cleancode.planes.ExperimentalPlane;
+import com.training.java.firststage.cleancode.planes.MilitaryPlane;
+import com.training.java.firststage.cleancode.planes.PassengerPlane;
+import com.training.java.firststage.cleancode.planes.Plane;
+import com.training.java.firststage.cleancode.types.ConfidentialLevel;
+import com.training.java.firststage.cleancode.types.ExperimentalType;
+import com.training.java.firststage.cleancode.types.MilitaryType;
+import com.training.java.firststage.cleancode.types.PlaneType;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.*;
