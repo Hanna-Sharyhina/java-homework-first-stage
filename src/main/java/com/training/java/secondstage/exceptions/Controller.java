@@ -19,9 +19,9 @@ public class Controller {
     private static final Logger LOGGER = Logger.getLogger(Controller.class.getSimpleName());
     private static final String FALSE_INPUT = "Ввод осуществлен неверно. Попробуйте повторить. ";
     private String criteria;
-    private static String userChosenSubject;
-    private static Faculty userChosenFaculty;
-    private static Group userChosenGroup;
+    private String userChosenSubject;
+    private Faculty userChosenFaculty;
+    private Group userChosenGroup;
     Random random = new Random();
     DecimalFormat formattedDouble = new DecimalFormat("#0.00");
     static SortingHat sortingHat = new SortingHat();
@@ -60,7 +60,8 @@ public class Controller {
         }
     }
 
-    public static void setUserChosenSubject() {
+    public void setUserChosenSubject() {
+        userChosenSubject = null;
         String userInput;
         Scanner scanner = new Scanner(System.in);
         LOGGER.info("Выберите один из предметов: \n" +
@@ -69,7 +70,7 @@ public class Controller {
                 HISTORY_OF_MAGIC.getStudySubjectsName() + ", " + CHARMS.getStudySubjectsName());
         userInput = scanner.next().trim();
         for (StudySubjects subject : getStudySubjects()) {
-            if (userInput.equalsIgnoreCase(subject.getStudySubjectsName())) {
+            if (subject.getStudySubjectsName().toUpperCase().startsWith((userInput).toUpperCase())) {
                 userChosenSubject = subject.getStudySubjectsName();
                 break;
             }
@@ -80,7 +81,8 @@ public class Controller {
         }
     }
 
-    public static void setUserChosenFaculty() {
+    public void setUserChosenFaculty() {
+        userChosenFaculty = null;
         String userInput;
         Scanner scanner = new Scanner(System.in);
         LOGGER.info("Выберите факультет из предложенных :\n" +
@@ -99,7 +101,8 @@ public class Controller {
         }
     }
 
-    public static void setUserChosenGroup() {
+    public void setUserChosenGroup() {
+        userChosenGroup = null;
         setUserChosenFaculty();
         String userInput;
         Scanner scanner = new Scanner(System.in);
