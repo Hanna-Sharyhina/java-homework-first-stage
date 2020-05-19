@@ -24,8 +24,8 @@ public class Controller {
     private Group userChosenGroup;
     Random random = new Random();
     DecimalFormat formattedDouble = new DecimalFormat("#0.00");
-    static SortingHat sortingHat = new SortingHat();
-    static final University university = sortingHat.createUniversity();
+    private static SortingHat sortingHat = new SortingHat();
+    private static University university = sortingHat.createUniversity();
 
     public void createCriteriaForUserChoice() {
         String menuForUserChoose = "Введите номер действия, где: \n" +
